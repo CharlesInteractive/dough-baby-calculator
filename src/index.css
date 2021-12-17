@@ -181,6 +181,7 @@ input[type="number"] {
   border-bottom: 2px solid #00334d;
   font-family: 'Secular One', sans-serif;
   font-style: italic;
+  color: #00334d;
 }
 input[type="number"]:focus {
   outline: 2px solid rgba(35, 223, 18, .8)
