@@ -23,6 +23,11 @@ code {
 }
 h1 {
   line-height: 1;
+  
+}
+h1,
+h2 {
+  letter-spacing: 2px;
 }
 h1,
 h2,
