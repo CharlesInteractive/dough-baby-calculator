@@ -39,5 +39,6 @@
     "eslint-plugin-flowtype": "^8.0.3",
     "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-react-hooks": "^4.2.1-rc.0-next-575791925-20211213"
-  }
+  },
+  "homepage": "."
 }
