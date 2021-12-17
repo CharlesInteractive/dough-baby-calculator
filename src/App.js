@@ -102,7 +102,7 @@ function App() {
     <div className="App background" style={{backgroundImage: `url(${bgimg})`}}>
       <header className="wrapper mb-lg pt-lg">
         <div className="bumper">
-          <h1 className="text-center">Dough Baby</h1>
+          <h1 className="text-center">Dough Baby Cookies</h1>
           <h3 className="text-center"><em>Calculator</em></h3>
         </div>
       </header>
