@@ -99,7 +99,8 @@ function App() {
   }
 
   return (
-    <div className="App background" style={{backgroundImage: `url(${bgimg})`}}>
+    <>
+    <div className="App">
       <header className="wrapper mb-lg pt-lg">
         <div className="bumper">
           <h1 className="text-center">Dough Baby Cookies</h1>
@@ -234,6 +235,8 @@ function App() {
         </div>
       </footer>
     </div>
+    <div className="background" style={{backgroundImage: `url(${bgimg})`}}></div>
+    </>
   )
 }
 
