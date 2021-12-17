@@ -228,7 +228,7 @@ function App() {
       </main>
       <footer className="wrapper mt-md pb-lg">
         <div className="bumper">
-          <a href="https://charlesinteractive.github.io/repos/dough-baby-calculator" target="_blank" rel="noreferrer">
+          <a href="https://github.com/CharlesInteractive/dough-baby-calculator" target="_blank" rel="noreferrer">
             <h2 className="code text-white">View on GitHub</h2>
           </a>
         </div>
