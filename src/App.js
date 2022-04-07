@@ -14,7 +14,9 @@ function App() {
   let doughBabyQty = 0,
       cookies = 0,
       doughBabies = 0,
-      wholeBabies = 0
+      wholeBabies = 0,
+      cupLbs = .28,
+      packSticks = 4
   
   const [ dozensNeeded, setDozensNeeded ] = useState( 0 ),
         [ cookiesNeeded, setCookiesNeeded ] = useState( 0 ),
@@ -32,25 +34,28 @@ function App() {
         dbVanilla = 1 // 1 tsp vanilla
 
   const [ margarineNeeded, setMargarineNeeded ] = useState( 0 ),
+        [ margarineSticksNeeded, setMargarineSticksNeeded ] = useState( 0 ),
         [ pwdSugarNeeded, setPwdSugarNeeded ] = useState( 0 ),
-        [ flourNeeded, setFlourNeeded ] = useState(0),
-        [ tartarNeeded, setTartarNeeded ] = useState(0),
-        [ sodaNeeded, setSodaNeeded ] = useState(0),
-        [ almondNeeded, setAlmondNeeded ] = useState(0),
-        [ vanillaNeeded, setVanillaNeeded ] = useState(0)
+        [ pwdSugarLbsNeeded, setPwdSugarLbsNeeded ] = useState( 0 ),
+        [ flourNeeded, setFlourNeeded ] = useState( 0 ),
+        [ tartarNeeded, setTartarNeeded ] = useState( 0 ),
+        [ sodaNeeded, setSodaNeeded ] = useState( 0 ),
+        [ almondNeeded, setAlmondNeeded ] = useState( 0 ),
+        [ vanillaNeeded, setVanillaNeeded ] = useState( 0 )
 
   // frosting ingredients
-  const fPwdSugar = 2, // 2lbs powdered sugar
+  const fPwdSugar = 7, // 7cups powdered sugar
         fCrisco = 1, // 1 cup crisco
         fMilk = .75, // .75 cup milk
         fAlmond = 1, // 1 tsp almond extract
         fVanilla = 1 // 1 tsp vanilla
 
-  const [ fPwdSugarNeeded, setFPwdSugarNeeded ] = useState(0),
-        [ criscoNeeded, setCriscoNeeded ] = useState(0),
-        [ milkNeeded, setMilkNeeded ] = useState(0),
-        [ fAlmondNeeded, setFAlmondNeeded ] = useState(0),
-        [ fVanillaNeeded, setFVanillaNeeded ] = useState(0)
+  const [ fPwdSugarNeeded, setFPwdSugarNeeded ] = useState( 0 ),
+        [ fPwdSugarLbsNeeded, setFPwdSugarLbsNeeded ] = useState( 0 ),
+        [ criscoNeeded, setCriscoNeeded ] = useState( 0 ),
+        [ milkNeeded, setMilkNeeded ] = useState( 0 ),
+        [ fAlmondNeeded, setFAlmondNeeded ] = useState( 0 ),
+        [ fVanillaNeeded, setFVanillaNeeded ] = useState( 0 )
 
   // handle calculator function
   const calcHandler = (e) => {
@@ -79,7 +84,9 @@ function App() {
     setDoughBabiesNeeded(doughBabiesNeeded => doughBabiesNeeded = doughBabies.toFixed(3))
 
     setMargarineNeeded(margarineNeeded => margarineNeeded = dbMargarine * wholeBabies)
+    setMargarineSticksNeeded(margarineSticksNeeded => margarineSticksNeeded = dbMargarine * wholeBabies * packSticks)
     setPwdSugarNeeded(pwdSugarNeeded => pwdSugarNeeded = dbPwdSugar * wholeBabies)
+    setPwdSugarLbsNeeded(pwdSugarLbsNeeded => pwdSugarLbsNeeded = dbPwdSugar * wholeBabies * cupLbs )
     setFlourNeeded(flourNeeded => flourNeeded = dbFlour * wholeBabies)
     setTartarNeeded(tartarNeeded => tartarNeeded = dbTartar * wholeBabies)
     setSodaNeeded(sodaNeeded => sodaNeeded = dbSoda * wholeBabies)
@@ -87,6 +94,7 @@ function App() {
     setVanillaNeeded(vanillaNeeded => vanillaNeeded = dbVanilla * wholeBabies)
 
     setFPwdSugarNeeded(fPwdSugarNeeded => fPwdSugarNeeded = fPwdSugar * wholeBabies )
+    setFPwdSugarLbsNeeded(fPwdSugarLbsNeeded => fPwdSugarLbsNeeded = fPwdSugar * wholeBabies * cupLbs )
     setCriscoNeeded(criscoNeeded => criscoNeeded = fCrisco * wholeBabies )
     setMilkNeeded(milkNeeded => milkNeeded = fMilk * wholeBabies)
     setFAlmondNeeded(fAlmondNeeded => fAlmondNeeded = fAlmond * wholeBabies)
@@ -230,7 +238,7 @@ function App() {
                         value="small"
                         defaultChecked
                         onChange={ calcHandler } />
-                <span class="mark"></span>
+                <span className="mark"></span>
               </label>
               <br/>
               <label htmlFor="largeCookie" className='check flex jc-space-between ai-center flex-col text-center'>
@@ -240,7 +248,7 @@ function App() {
                         name="cookieSize"
                         value="large"
                         onChange={ calcHandler } />
-                <span class="mark"></span>
+                <span className="mark"></span>
               </label>
               <br/>
               <div className="flex jc-space-between ai-center">
@@ -280,12 +288,18 @@ function App() {
             <h4 className='mb-sm'><em>For {wholeNeeds } Dough Babies</em></h4>
             <div className="boxed">
               <div className="flex jc-space-between underlined">
-                <p>Sticks margarine<br/>(1 pack per dough baby)</p>
-                <p className='ml-sm text-right half-width'><strong>{ margarineNeeded } packs</strong></p>
+                <p>Sticks margarine<br/>(1 pack or 4 sticks per dough baby)</p>
+                <p className='ml-sm text-right half-width'>
+                  <strong>{ margarineNeeded } packs</strong><br/>
+                  <strong>{ margarineSticksNeeded } sticks</strong>
+                </p>
               </div>
               <div className="flex jc-space-between underlined">
                 <p>Cups powdered sugar<br/>(3 cups per dough baby)</p>
-                <p className='ml-sm text-right half-width'><strong>{ pwdSugarNeeded } cups</strong></p>
+                <p className='ml-sm text-right half-width'>
+                  <strong>{ pwdSugarNeeded } cups</strong><br/>
+                  <strong>{ pwdSugarLbsNeeded.toFixed(2) } lbs.</strong>
+                </p>
               </div>
               <div className="flex jc-space-between underlined">
                 <p>Cups flour<br/>(5 cups per dough baby)</p>
@@ -311,11 +325,14 @@ function App() {
           </div>
           <div>
             <h3>Frosting Ingredients Needed</h3>
-            <h4 className='mb-sm'><em>For {wholeNeeds } Dough Babies</em></h4>
+            <h4 className='mb-sm'><em>For { wholeNeeds } Dough Babies</em></h4>
             <div className="boxed">
               <div className="flex jc-space-between underlined">
-                <p>Lbs. powdered sugar<br/>(2 lbs. per batch)</p>
-                <p className='ml-sm text-right half-width'><strong>{ fPwdSugarNeeded } lbs.</strong></p>
+                <p>powdered sugar<br/>(1.96 lbs. or 7 cups per batch)</p>
+                <p className='ml-sm text-right half-width'>
+                  <strong>{ fPwdSugarNeeded } cups</strong><br/>
+                  <strong>{ fPwdSugarLbsNeeded.toFixed(2) } lbs.</strong>
+                </p>
               </div>
               <div className="flex jc-space-between underlined">
                 <p>Cups crisco<br/>(1 cup per batch)</p>

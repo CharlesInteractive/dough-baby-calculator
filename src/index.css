@@ -11,7 +11,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-size: 20px;
   background-color: #8ef4f8;
-  color: #00334d;
+  color: #072229;
 }
 
 code {
@@ -19,7 +19,7 @@ code {
     monospace;
 }
 .text-white {
-  color: #fff;
+  color: #f2f2f2;
 }
 h1 {
   line-height: 1;
@@ -71,7 +71,7 @@ a {
   content: "";
   margin: 10px 0;
   height: 1px;
-  background-color: #29768a;
+  background-color: rgba(41, 118, 138, .7);
   width: 100%;
   position: absolute;
   bottom: -21px;
@@ -169,7 +169,7 @@ a {
 }
 
 .boxed {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.7);
   border-radius: 20px;
   padding: 20px 15px 25px;
 }
@@ -184,10 +184,10 @@ input[type="number"] {
   font-size: 2em;
   background: transparent;
   border: none;
-  border-bottom: 2px solid #00334d;
+  border-bottom: 2px solid #072229;
   font-family: 'Secular One', sans-serif;
   font-style: italic;
-  color: #00334d;
+  color: #072229;
 }
 input[type="number"]:focus {
   outline: 2px solid rgba(35, 223, 18, .8)
@@ -223,17 +223,17 @@ input[type="number"]:focus {
   left: 0;
   height: 25px;
   width: 25px;
-  background-color: #fff;
+  background-color: #f2f2f2;
 }
 
 /* On mouse-over, add a grey background color */
 .check:hover input ~ .mark {
-  background-color: #cceeff;
+  background-color: #3eeefd;
 }
 
 /* When the box is checked, add a blue background */
 .check input:checked ~ .mark {
-  background-color: #00334d;
+  background-color: #072229;
 }
 
 /* Create the mark/indicator (hidden when not checked) */
@@ -254,7 +254,7 @@ input[type="number"]:focus {
   top: 5px;
   width: 5px;
   height: 10px;
-  border: solid white;
+  border: solid #f2f2f2;
   border-width: 0 3px 3px 0;
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
